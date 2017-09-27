@@ -1,48 +1,41 @@
-// List of JavaScript tips
+// Lista de conceptos en Javascript
 var tipsList = [
-	"Don't forget the <span class='code'>var</span> keyword when assigning a variable's value for the first time.",
+	"No hay que olvidar la palabra clave <span class='code'>var</span> cuando se asigna un valor a una variable por primera vez.",
 
-	"<span class='code'>undefined</span>, <span class='code'>null</span>, <span class='code'>0</span>, <span class='code'>false</span>, <span class='code'>NaN</span>, and <span class='code'>''</span> (empty string) are all falsy.",
+	"<span class='code'>undefined</span>, <span class='code'>null</span>, <span class='code'>0</span>, <span class='code'>false</span>, <span class='code'>NaN</span>, y <span class='code'>''</span> (una string vacía) son falsas.",
 
-	"Declare a function with<br/> <span class='code-block'>function <em>myFunctionName</em>() { <br>&nbsp;&nbsp;...<br> }</span>",
+	"Se declara una función de la siguiente manera:<br/> <span class='code-block'>function <em>nombreDeMiFuncion</em>() { <br>&nbsp;&nbsp;...<br> }</span>",
 
-	"<span class='code'>if</span>/<span class='code'>else</span> statements look like <br/> <span class='code-block'>if (<em>condition</em>) { <br/>&nbsp;&nbsp;...<br/>} else { <br/>&nbsp;&nbsp;...<br/>}",
+	"Las instrucciones <span class='code'>if</span>/<span class='code'>else</span> lucen así:<br/> <span class='code-block'>if (<em>condición</em>) { <br/>&nbsp;&nbsp;...<br/>} else { <br/>&nbsp;&nbsp;...<br/>}",
 
-	"You can return the result of a function into a variable with <span class='code'>return</span>:<br><span class='code-block'>function timesFive(inputNumber) {<br> &nbsp;&nbsp;return inputNumber * 5; <br>}<br>console.log(timesFive(6));<br>// Output: 30</span> ",
+  "Se puede retornar el resultado de una función con <span class='code'>return</span>:<br><span class='code-block'>function multiplicarPorCinco(numeroDeEntrada) {<br> &nbsp;&nbsp;return numeroDeEntrada * 5; <br>}<br>console.log(multiplicarPorCinco(6));<br>// Salida: 30</span> ",
 
-	"The <span class='code'>&&</span> operator means both things must be true: <br/> <span class='code-block'> true && true = true<br>true && false = false<br>false && false = false</span>",
+  "El operador<span class='code'>&&</span> comprueba si ambas expresiones son verdad: <br/> <span class='code-block'>true && true = true<br>true && false = false<br>false && false = false</span>",
 
-	"The <span class='code'>||</span> operator means either can be true: <br/> <span class='code-block'> true || true = true<br>true || false = true<br>false || false = false</span>",
+  "El operador<span class='code'>||</span> comprueba si alguna de las expresiones es verdad: <br/> <span class='code-block'>true || true = true<br>true || false = true<br>false || false = false</span>",
 
-	"A <span class='code'>for</span> has three conditions: a start condition, a stop condition, and an iterator: <br> <span class='code-block'>for (var i = 0; i < myArray.length; i++) { <br>&nbsp;&nbsp;...<br>}</span>",
+  "El bucle <span class='code'>for</span> tiene tres condiciones: una condición de comienzo, una condición de fin y un iterador: <br><span class='code-block'>for (var i = 0; i < miArray.length; i++) { <br>&nbsp;&nbsp;...<br>}</span>",
 
-	"To interpolate a variable into a string, use the <span class='code'>+</span> operator, like this: <br> <span class='code-block'>var myName = 'Jon';<br/> 'Hello, my name is ' + myName;</span>",
+  "Para interpolar una variable dentro de una string, se usa el operador <span class='code'>+</span> de esta manera: <br> <span class='code-block'>var miNombre = 'Juan';<br/> 'Hola, mi nombre es ' + miNombre; <br>// Salida: Hola, mi nombre es Juan</span>",
 
-	"To generate a random number, use JavaScript's built in function <span class='code'>Math.random()</span>.",
+  "Para generar un número aleatorio, se puede usar la función preconstruida de Javascript <span class='code'>Math.random()</span>.",
 
-	"Arrays hold lists of data. You can access any of the list items by using bracket notation, like this: <br> <span class='code-block'>var myArray = ['pears', 'asparagus', 'bananas'];<br>myArray[1]; // asparagus</span>"
+  "Los arrays (vectores) almacenan una lista de datos. Se puede acceder a cualquiera de los elementos de la lista con la notación de corchetes, así: <br> <span class='code-block'>var miArray = ['peras', 'espárragos', 'bananas'];<br>miArray[1]; // espárragos</span>"
 ];
 
-// Tip Limit counter
+// Contador de conceptos, límite máximo
 var tipLimit = 6;
-var tiparray = -1
-// Generate a number
+
+// Generar un número aleatorio
 function generateNumber(){
 	return Math.floor(Math.random() * tipsList.length);
-  //return tiparray += 1;
 }
 
-// Generate a tip:
-// 1. Get random number from generateNumber()
-// 2. Use the random number to get the tip from the array
-// 3. Show the tip
+// Generar un concepto:
+// 1. Obtener un número aleatorio con generateNumber()
+// 2. Usar ese número aleatorio para obtener 1 concepto del array tipsList
+// 3. Presentar el concepto en pantalla
 function generateTip() {
-  // var tip = tipsList[generateNumber()];
-  // var tipElement = document.querySelector('.js-idea');
-  // var tipLimitCount = document.querySelector('.idea-limit-count');
-
-  // tipElement.innerHTML = tip;
-  // tipLimitCount.innerHTML = tipLimit;
   var tip = tipsList[generateNumber()];
   var tipElement =  document.querySelector('.js-idea');
   var tipLimitCount = document.querySelector('.idea-limit-count');
@@ -52,17 +45,13 @@ function generateTip() {
 }
 
 // Tip button click
-// 1. Select the tip button
-// 2. Add a click event listener
-// 3. When the button is clicked:
-// 3a. Subtract 1 from the tipLimit
-// 3b. If the tipLimit is still above or equal to 0, generate a new tip
-// 3c. If not, change the button text and look
-function onTipButtonClack() {
-//  var tipButton = document.querySelector('.tip-button');
-//  tipButton.addEventListener('click', function() {
-//    console.log('RIP clippy');
-//  });
+// 1. Seleccionar el botón del concepto
+// 2. Agregar un escuchador de eventos click
+// 3. Cuando se hace click en el botón:
+// 3a. Substraer 1 de la variable tipLimit
+// 3b. Si tipLimit aún está por arriba o igual a 0, generar un nuevo concepto
+// 3c. Sino, cambiar el texto y el estilo al botón
+function onTipButtonClick() {
 var tipButton = document.querySelector('.idea-button');
   tipButton.addEventListener('click', function() {
     tipLimit = tipLimit - 1;
@@ -77,7 +66,8 @@ var tipButton = document.querySelector('.idea-button');
   });
 }
 
-onTipButtonClack();
-// Get the first tip
-generateTip();
+// Llamar a la función del botón para que escuche el evento click
+onTipButtonClick();
 
+// Obtener el primer concepto para que esté disponible al cargar el programa.
+generateTip();
