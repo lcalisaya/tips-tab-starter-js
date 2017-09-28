@@ -1,70 +1,88 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+} 
+
+html, body {
+  box-sizing: border-box;
+  font-family: sans-serif
+}
+
 body {
-  background-color: #608856;
-  color: white;
+  background-color: tomato;
   letter-spacing: 0.05rem;
-  width: 80%;
+  width: 75%;
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-content: center;
-  margin: 10px auto;
-}
-
-.idea {
-  width: 100%;
-}
-
-.code {
-  font-family: sans-serif;
-  background-color: #336112;
-  padding: 0.25rem 0.75rem;
-  font-size: 1.375rem;
-  border-radius: 0.15em;
-}
-
-.code-block {
-  font-family: monaco, Consolas, "Lucida Console", monospace;
-  background-color: #336189;
-  padding: 0.5em 0.75em;
-  font-size: 1.15rem;
-  border-radius: 0.15px;
-  display: inline;
-  margin: 1rem 0;
-}
-
-.idea-number {
+  align-items: center;
   margin: auto;
-  margin-bottom: 2.5rem;
-  color: #CCCCCC;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  font-weight: bolder;
-  font-size: 1rem;
 }
 
-.js-idea {
-  margin: auto;
-  line-height: 2rem;
-  font-weight: 300;
-  font-size: 1.375rem;
-}
+  .tip {
+    border: 2px solid black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    background-color: greenyellow;
+    border-radius: 10px;
+  }
 
-.idea-button {
-  background-color: teal;
-  outline: solid;
-  padding: 1rem 1.5rem;
-  display: block;
-  margin: auto;
-  font-size: 1rem;
-  margin-top: 2.5rem;
-  cursor: pointer;
-  font-weight: bolder;
-  border: 1px solid yellow;
-  color: white;
-}
+    .tip-title {
+      margin: 30px 0;
+      color: green;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 2px;
+      font-weight: bolder;
+      font-size: 2rem;
+      flex-basis: 50%;
+    }
 
-.disabled {
-  background-color: greenyellow !important;
-  color: maroon;
-  cursor: not-allowed !important;
-}
+    .js-tip {
+      line-height: 3rem;
+      font-weight: 200;
+      font-size: 1.375rem;
+      /* border: 2px solid blueviolet; */
+      color: white;
+      min-height: 300px;
+      width: 80%;
+      flex-basis: 80%;
+    }
+
+      .code {
+        background-color: red;
+        padding: 0.25rem 0.75rem;
+        font-size: 1.375rem;
+        border-radius: 0.15em;
+      }
+      
+      .code-block {
+        font-family: Consolas, "Lucida Console", monospace;
+        background-color: blue;
+        padding: 0.5em 0.75em;
+        font-size: 1.15rem;
+        border-radius: 0.15px;
+        margin-top: 30px;
+        border: 1px solid white;
+      }
+
+    .tip-button {
+      background-color: goldenrod;
+      padding: 10px 15px;
+      font-size: 1rem;
+      margin: 1.5rem 0;
+      cursor: pointer;
+      font-weight: bolder;
+      border: 2px solid yellow;
+      border-radius: 8px;
+      color: white;
+      align-self: flex-end;
+      flex-basis: 30%;
+    }
+
+      .disabled {
+        background-color: forestgreen !important;
+        color: maroon;
+        cursor: not-allowed !important;
+      }

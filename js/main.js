@@ -1,18 +1,18 @@
 // Lista de conceptos en Javascript
 var tipsList = [
-	"No hay que olvidar la palabra clave <span class='code'>var</span> cuando se asigna un valor a una variable por primera vez.",
+  "No hay que olvidar la palabra clave <span class='code'>var</span> cuando se asigna un valor a una variable por primera vez.",
 
-	"<span class='code'>undefined</span>, <span class='code'>null</span>, <span class='code'>0</span>, <span class='code'>false</span>, <span class='code'>NaN</span>, y <span class='code'>''</span> (una string vacía) son falsas.",
+  "<span class='code'>undefined</span>, <span class='code'>null</span>, <span class='code'>0</span>, <span class='code'>false</span>, <span class='code'>NaN</span>, y <span class='code'>''</span> (una string vacía) son falsas.",
 
-	"Se declara una función de la siguiente manera:<br/> <span class='code-block'>function <em>nombreDeMiFuncion</em>() { <br>&nbsp;&nbsp;...<br> }</span>",
+  "Se declara una función de la siguiente manera:<br/> <span class='code-block'>function <em>nombreDeMiFuncion</em>() { <br>&nbsp;&nbsp;...<br> }</span>",
 
-	"Las instrucciones <span class='code'>if</span>/<span class='code'>else</span> lucen así:<br/> <span class='code-block'>if (<em>condición</em>) { <br/>&nbsp;&nbsp;...<br/>} else { <br/>&nbsp;&nbsp;...<br/>}",
+  "Las instrucciones <span class='code'>if</span>/<span class='code'>else</span> lucen así:<br/> <span class='code-block'>if (<em>condición</em>) { <br/>&nbsp;&nbsp;...<br/>} else { <br/>&nbsp;&nbsp;...<br/>}",
 
   "Se puede retornar el resultado de una función con <span class='code'>return</span>:<br><span class='code-block'>function multiplicarPorCinco(numeroDeEntrada) {<br> &nbsp;&nbsp;return numeroDeEntrada * 5; <br>}<br>console.log(multiplicarPorCinco(6));<br>// Salida: 30</span> ",
 
   "El operador<span class='code'>&&</span> comprueba si ambas expresiones son verdad: <br/> <span class='code-block'>true && true = true<br>true && false = false<br>false && false = false</span>",
 
-  "El operador<span class='code'>||</span> comprueba si alguna de las expresiones es verdad: <br/> <span class='code-block'>true || true = true<br>true || false = true<br>false || false = false</span>",
+  "El operador <span class='code'>||</span> comprueba si alguna de las expresiones es verdad: <br/> <span class='code-block'>true || true = true<br>true || false = true<br>false || false = false</span>",
 
   "El bucle <span class='code'>for</span> tiene tres condiciones: una condición de comienzo, una condición de fin y un iterador: <br><span class='code-block'>for (var i = 0; i < miArray.length; i++) { <br>&nbsp;&nbsp;...<br>}</span>",
 
@@ -24,11 +24,11 @@ var tipsList = [
 ];
 
 // Contador de conceptos, límite máximo
-var tipLimit = 6;
+var tipLimit = 8;
 
 // Generar un número aleatorio
 function generateNumber(){
-	return Math.floor(Math.random() * tipsList.length);
+  return Math.floor(Math.random() * tipsList.length);
 }
 
 // Generar un concepto:
@@ -37,8 +37,8 @@ function generateNumber(){
 // 3. Presentar el concepto en pantalla
 function generateTip() {
   var tip = tipsList[generateNumber()];
-  var tipElement =  document.querySelector('.js-idea');
-  var tipLimitCount = document.querySelector('.idea-limit-count');
+  var tipElement =  document.querySelector('.js-tip');
+  var tipLimitCount = document.querySelector('.tip-limit-count');
 
   tipElement.innerHTML = tip;
   tipLimitCount.innerHTML = tipLimit;
@@ -52,7 +52,7 @@ function generateTip() {
 // 3b. Si tipLimit aún está por arriba o igual a 0, generar un nuevo concepto
 // 3c. Sino, cambiar el texto y el estilo al botón
 function onTipButtonClick() {
-var tipButton = document.querySelector('.idea-button');
+var tipButton = document.querySelector('.tip-button');
   tipButton.addEventListener('click', function() {
     tipLimit = tipLimit - 1;
     if (tipLimit >= 0) {
